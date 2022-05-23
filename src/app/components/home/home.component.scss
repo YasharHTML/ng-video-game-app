@@ -7,10 +7,10 @@
 
 ::ng-deep {
     .mat-form-field-infix {
-      background: transparent;
-      border-color: #fff !important;
-      border-top: none;
-      padding-left: 5px !important;
+        background: transparent;
+        border-color: #fff !important;
+        border-top: none;
+        padding-left: 5px !important;
     }
     .mat-select-value,
     .mat-select-arrow,
@@ -20,8 +20,8 @@
         // background-color: #fff !important;
         opacity: 1;
     }
-    .mat-option{
-      background-color: #fff !important;
+    .mat-option {
+        background-color: #fff !important;
     }
     .mat-form-field-appearance-legacy .mat-form-field-label {
         padding-left: 5px;
@@ -32,69 +32,62 @@
 }
 
 .games {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .game {
-  width: 280px;
-  margin: 10px;
-  height: 330px;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #202020;
-  box-shadow: 4px 3px 8px 0px rgb(200, 152, 44);
-  transition-duration: 0.3s;
-
-  &:hover {
-    box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
-    transform: translateY(-3px);
-  }
-
-  &-thumb-container {
-    background-color: #000000;
-    position: relative;
-    height: 172px;
-    color: #fff;
-    text-align: center;
-  }
-
-  &-thumbnail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 172px;
-  }
-
-  &-description {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 157px;
-  }
-
-  &-name {
-    color: #fff;
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 20px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    width: 280px;
+    margin: 10px;
+    height: 330px;
     overflow: hidden;
-  }
-
-  &-platforms {
-    display: flex;
-  }
-
-  &-platform {
-    width: 20px;
-    margin-right: 10px;
-  }
+    border-radius: 5px;
+    background-color: #202020;
+    box-shadow: 4px 3px 8px 0px rgb(200, 152, 44);
+    transition-duration: 0.3s;
+    &:hover {
+        box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
+        transform: translateY(-3px);
+    }
+    &-thumb-container {
+        background-color: #000000;
+        position: relative;
+        height: 172px;
+        color: #fff;
+        text-align: center;
+    }
+    &-thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 172px;
+    }
+    &-description {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 157px;
+    }
+    &-name {
+        color: #fff;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &-platforms {
+        display: flex;
+    }
+    &-platform {
+        width: 20px;
+        margin-right: 10px;
+    }
 }
