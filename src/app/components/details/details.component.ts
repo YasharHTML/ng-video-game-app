@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
   gameRating = 0;
   game: Game | undefined;
   routeSub: Subscription | undefined;
-  gameSub: Subscription | undefined;
+  gameSub: Promise<void> | undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService) { }
 
@@ -30,7 +30,7 @@ export class DetailsComponent implements OnInit {
     this.gameSub = this
       .httpService
       .getGameDetails(id)
-      .subscribe((gameResp: Game) => {
+      .then((gameResp: Game) => {
         this.game = gameResp;
 
         setTimeout(() => {

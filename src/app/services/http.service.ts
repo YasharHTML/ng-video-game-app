@@ -17,20 +17,18 @@ export class HttpService {
     if (search) {
       params = new HttpParams().set("ordering", ordering).set("search", search)
     }
-
+    {
+      params: params
+    }
     return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
       params: params,
     });
   }
 
-  getGameDetails(id: string): Observable<Game> {
-    const gameInfoRequest = this.http.get(`${env.BASE_URL}/games/${id}`);
-    const gameTrailerRequest = this.http.get(`${env.BASE_URL}/games/${id}/movies`);
-    const gameScreenshotsRequest = this.http.get(`${env.BASE_URL}/games/${id}/screenshots`);
-
-    return forkJoin(gameInfoRequest, gameTrailerRequest, gameScreenshotsRequest).pipe(map((resp: any) => {
-      console.log({...resp['gameInfoRequest'], screenshots: resp['gameScreenshotsRequest']?.results, trailer: resp['gameTrailerRequest']?.results})
-      return { ...resp['gameInfoRequest'], screenshots: resp['gameScreenshotsRequest']?.results, trailer: resp['gameTrailerRequest']?.results }
-    }));
+  async getGameDetails(id: string): Promise<Game> {
+    var gameInfoRequest:any = await this.http.get(`${env.BASE_URL}/games/${id}`).toPromise();
+    var gameTrailerRequest:any = await this.http.get(`${env.BASE_URL}/games/${id}/movies`).toPromise();
+    var gameScreenshotsRequest:any = await this.http.get(`${env.BASE_URL}/games/${id}/screenshots`).toPromise();
+    return {...gameInfoRequest, scrennshots: gameScreenshotsRequest.results, trailers: gameTrailerRequest.results};
   }
 }
